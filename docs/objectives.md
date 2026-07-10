@@ -1,0 +1,3 @@
+# Project Objectives
+
+The Sports Injury Risk Detection Platform aims to help athletes, coaches, and sports medicine professionals identify early signs of injury risk through movement analysis and athlete health data. The platform will combine athlete profile management with pose estimation technology to flag potentially risky movement patterns before they lead to injury. By centralizing training load, injury history, and biomechanical data, it supports proactive rather than reactive athlete care.
