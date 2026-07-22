@@ -1,0 +1,7 @@
+﻿__pycache__/
+*.pyc
+venv/
+venv311/
+uploaded_videos/
+node_modules/
+.env

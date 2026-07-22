@@ -14,3 +14,20 @@ export const listAthletes = (token) =>
   axios.get(`${API_URL}/athletes`, {
     headers: { Authorization: `Bearer ${token}` },
   });
+export const uploadVideo = (athleteId, file, token) => {
+  const formData = new FormData();
+  formData.append("file", file);
+  return axios.post(`${API_URL}/athletes/${athleteId}/videos`, formData, {
+    headers: { Authorization: `Bearer ${token}`, "Content-Type": "multipart/form-data" },
+  });
+};
+
+export const analyzeVideo = (videoId, token) =>
+  axios.post(`${API_URL}/videos/${videoId}/analyze`, {}, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+export const getReport = (videoId, token) =>
+  axios.get(`${API_URL}/videos/${videoId}/report`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
