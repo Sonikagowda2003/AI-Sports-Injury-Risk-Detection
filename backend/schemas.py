@@ -29,3 +29,31 @@ class AthleteCreate(BaseModel):
     weight_kg: Optional[float] = None
     injury_history: Optional[str] = None
     training_load: Optional[str] = None
+
+from typing import Optional, Dict
+from datetime import datetime
+
+class VideoUploadOut(BaseModel):
+    id: int
+    athlete_id: int
+    filename: str
+    status: str
+    uploaded_at: datetime
+
+    class Config:
+        from_attributes = True
+
+class BiomechanicalReportOut(BaseModel):
+    id: int
+    video_id: int
+    frames_analyzed: int
+    symmetry_score: float
+    posture_stability_score: float
+    knee_valgus_risk_pct: float
+    movement_quality_score: float
+    risk_category: str
+    range_of_motion: Dict[str, float]
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
