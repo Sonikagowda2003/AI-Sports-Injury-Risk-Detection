@@ -63,6 +63,7 @@ def analyze_sequence(frames_data: list):
 
     knee_l, knee_r = series("knee_angle_left"), series("knee_angle_right")
     hip_l, hip_r = series("hip_angle_left"), series("hip_angle_right")
+    elbow_l, elbow_r = series("elbow_angle_left"), series("elbow_angle_right")
     valgus = series("knee_valgus_ratio")
     trunk = series("trunk_lean_degrees")
 
@@ -72,7 +73,15 @@ def analyze_sequence(frames_data: list):
         "knee_right": float(knee_r.max() - knee_r.min()),
         "hip_left": float(hip_l.max() - hip_l.min()),
         "hip_right": float(hip_r.max() - hip_r.min()),
+        "elbow_left": float(elbow_l.max() - elbow_l.min()),
+        "elbow_right": float(elbow_r.max() - elbow_r.min()),
     }
+
+    # Upper-body (elbow) left/right symmetry — feeds the Shoulder Injury Risk
+    # category in the Milestone 3 injury prediction engine.
+    upper_body_symmetry_score = float(round(
+        100 - min(100, abs(elbow_l.mean() - elbow_r.mean())), 1
+    ))
 
     # Symmetry: 100 = perfectly symmetric, drops as left/right diverge
     knee_symmetry = 100 - min(100, abs(knee_l.mean() - knee_r.mean()))
@@ -108,4 +117,5 @@ def analyze_sequence(frames_data: list):
         "knee_valgus_risk_pct": valgus_risk_pct,
         "movement_quality_score": movement_quality_score,
         "risk_category": risk_category,
+        "upper_body_symmetry_score": upper_body_symmetry_score,
     }
