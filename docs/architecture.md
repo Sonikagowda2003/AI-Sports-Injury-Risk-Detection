@@ -1,0 +1,3 @@
+# System Architecture (Milestone 1)
+
+The current architecture follows a simple three-tier structure. The **frontend** is built in React and handles user login and athlete profile forms. The **backend** is a FastAPI service that exposes REST endpoints for authentication (JWT-based) and athlete CRUD operations, with role-based access control for athletes, coaches, physiotherapists, sports scientists, and admins. The **database** is PostgreSQL, storing user credentials and athlete profile data via SQLAlchemy ORM models. Future milestones will introduce a pose-estimation microservice that processes video/pose data and feeds risk predictions back into this system.
