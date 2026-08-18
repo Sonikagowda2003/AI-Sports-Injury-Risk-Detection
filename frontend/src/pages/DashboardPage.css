@@ -1,0 +1,812 @@
+/* DashboardPage.css - Milestone 4: Dashboard Styling */
+
+.dashboard-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-header h1 {
+  font-size: 2em;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.header-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.view-toggle,
+.export-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.view-toggle {
+  background: #3498db;
+  color: white;
+}
+
+.view-toggle:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
+}
+
+.export-btn {
+  background: #27ae60;
+  color: white;
+}
+
+.export-btn:hover {
+  background: #229954;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(39, 174, 96, 0.3);
+}
+
+.export-small-btn {
+  padding: 6px 12px;
+  font-size: 0.85em;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.export-small-btn:hover {
+  background: #2980b9;
+  transform: scale(1.05);
+}
+
+/* ========== OVERVIEW VIEW ========== */
+
+.overview-view {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.team-stats-section {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.team-stats-section h2,
+.athletes-section h2,
+.risk-distribution-section h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 25px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.stat-card.high {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  box-shadow: 0 4px 12px rgba(245, 87, 108, 0.3);
+}
+
+.stat-card.high:hover {
+  box-shadow: 0 8px 20px rgba(245, 87, 108, 0.4);
+}
+
+.stat-card.moderate {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  box-shadow: 0 4px 12px rgba(250, 112, 154, 0.3);
+}
+
+.stat-card.low {
+  background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+  box-shadow: 0 4px 12px rgba(48, 207, 208, 0.3);
+}
+
+.stat-icon {
+  font-size: 2.5em;
+  opacity: 0.8;
+}
+
+.stat-content h4 {
+  margin: 0;
+  font-size: 0.95em;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stat-value {
+  margin: 8px 0 0 0;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+/* ========== RISK DISTRIBUTION ========== */
+
+.risk-distribution-section {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.distribution-bars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.bar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bar-label {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 0.95em;
+}
+
+.bar-container {
+  background: #ecf0f1;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.bar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.85em;
+  transition: width 0.3s ease;
+  min-width: 40px;
+}
+
+.bar.low-risk {
+  background: linear-gradient(90deg, #30cfd0, #330867);
+}
+
+.bar.moderate-risk {
+  background: linear-gradient(90deg, #fa709a, #fee140);
+}
+
+.bar.high-risk {
+  background: linear-gradient(90deg, #f093fb, #f5576c);
+}
+
+.bar.critical-risk {
+  background: linear-gradient(90deg, #eb3349, #f45c43);
+}
+
+/* ========== ATHLETES SECTION ========== */
+
+.athletes-section {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filter-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.filter-controls label {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.filter-controls select {
+  padding: 10px 15px;
+  border: 2px solid #ecf0f1;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-controls select:hover {
+  border-color: #3498db;
+}
+
+.filter-controls select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.athletes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.athlete-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.athlete-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+}
+
+.athlete-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.4em;
+}
+
+.athlete-card .position {
+  margin: 5px 0;
+  opacity: 0.9;
+  font-size: 0.95em;
+}
+
+.athlete-card .sport {
+  margin: 5px 0 15px 0;
+  opacity: 0.85;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.athlete-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.view-btn {
+  flex: 1;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.view-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+/* ========== DETAILED VIEW ========== */
+
+.detailed-view {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.athlete-header {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.athlete-info h2 {
+  margin: 0;
+  font-size: 2em;
+  color: #2c3e50;
+}
+
+.meta-info {
+  margin: 10px 0 0 0;
+  color: #7f8c8d;
+  font-size: 1.1em;
+}
+
+.athlete-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.athlete-btn {
+  padding: 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.athlete-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(102, 126, 234, 0.3);
+}
+
+/* ========== ASSESSMENT SECTION ========== */
+
+.assessment-section {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.assessment-section h3 {
+  color: #2c3e50;
+  margin-bottom: 25px;
+  font-size: 1.6em;
+}
+
+.assessment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.assessment-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.assessment-card h4 {
+  margin: 0;
+  font-size: 0.95em;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.assessment-card .value {
+  margin: 15px 0 0 0;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.recommendations {
+  background: #ecf0f1;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 25px;
+}
+
+.recommendations h4 {
+  margin: 0 0 15px 0;
+  color: #2c3e50;
+}
+
+.recommendations ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recommendations li {
+  padding: 10px 0;
+  color: #2c3e50;
+  border-bottom: 1px solid #bdc3c7;
+}
+
+.recommendations li:last-child {
+  border-bottom: none;
+}
+
+/* ========== TRENDS SECTION ========== */
+
+.trends-section {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.trends-section h3 {
+  color: #2c3e50;
+  margin-bottom: 25px;
+  font-size: 1.6em;
+}
+
+.date-range-selector {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.date-range-selector button {
+  padding: 8px 16px;
+  border: 2px solid #3498db;
+  background: white;
+  color: #3498db;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.date-range-selector button:hover {
+  background: #3498db;
+  color: white;
+}
+
+.date-range-selector button.active {
+  background: #3498db;
+  color: white;
+}
+
+.metrics-display {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.metrics-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.metrics-card.improving {
+  background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+}
+
+.metrics-card.declining {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.metrics-card h4 {
+  margin: 0;
+  font-size: 0.95em;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.metric-value {
+  margin: 15px 0 10px 0;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.trend-indicator {
+  margin: 0;
+  font-size: 0.9em;
+  opacity: 0.85;
+}
+
+/* ========== TRENDS CHART ========== */
+
+.trends-chart {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 25px;
+}
+
+.chart-svg {
+  width: 100%;
+  height: 300px;
+}
+
+.trend-line {
+  fill: none;
+  stroke: #3498db;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.chart-label {
+  text-align: center;
+  color: #7f8c8d;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* ========== RECENT VIDEOS ========== */
+
+.recent-videos-section {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.recent-videos-section h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.6em;
+}
+
+.videos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.video-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+  transition: all 0.3s ease;
+}
+
+.video-item:hover {
+  background: #ecf0f1;
+  transform: translateX(5px);
+}
+
+.video-name {
+  font-weight: 600;
+  color: #2c3e50;
+  flex: 1;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: 600;
+  margin: 0 15px;
+}
+
+.status.uploaded {
+  background: #3498db;
+  color: white;
+}
+
+.status.analyzing {
+  background: #f39c12;
+  color: white;
+}
+
+.status.completed {
+  background: #27ae60;
+  color: white;
+}
+
+.status.failed {
+  background: #e74c3c;
+  color: white;
+}
+
+.date {
+  color: #7f8c8d;
+  font-size: 0.9em;
+}
+
+/* ========== ERROR & LOADING STATES ========== */
+
+.dashboard-container.loading,
+.dashboard-container.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.spinner {
+  border: 4px solid #ecf0f1;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-message {
+  background: #e74c3c;
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+.error-message h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.5em;
+}
+
+.error-message p {
+  margin: 0 0 20px 0;
+}
+
+.error-message button {
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.error-message button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.no-data {
+  text-align: center;
+  padding: 40px;
+  color: #7f8c8d;
+  font-size: 1.1em;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .athletes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .metrics-display {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .dashboard-header h1 {
+    font-size: 1.5em;
+  }
+  
+  .header-controls {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .view-toggle,
+  .export-btn {
+    width: 100%;
+  }
+  
+  .stats-grid,
+  .athletes-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .athlete-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  
+  .distribution-bars {
+    grid-template-columns: 1fr;
+  }
+  
+  .video-item {
+    flex-wrap: wrap;
+  }
+  
+  .status {
+    order: 3;
+    flex-basis: 100%;
+  }
+  
+  .date-range-selector {
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 10px;
+  }
+  
+  .dashboard-header {
+    padding: 15px;
+  }
+  
+  .dashboard-header h1 {
+    font-size: 1.2em;
+  }
+  
+  .team-stats-section,
+  .athletes-section,
+  .risk-distribution-section,
+  .assessment-section,
+  .trends-section,
+  .recent-videos-section {
+    padding: 15px;
+  }
+  
+  .stat-icon {
+    font-size: 2em;
+  }
+  
+  .stat-value {
+    font-size: 1.5em;
+  }
+}

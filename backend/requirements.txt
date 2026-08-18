@@ -1,0 +1,75 @@
+# requirements.txt - Milestone 4: Python Dependencies
+
+# FastAPI & Web Framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+starlette==0.27.0
+python-multipart==0.0.6
+
+# Database
+sqlalchemy==2.0.23
+psycopg2-binary==2.9.9
+alembic==1.12.1
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# Authentication & Security
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+PyJWT==2.8.1
+cryptography==41.0.7
+python-dotenv==1.0.0
+
+# Biomechanical Analysis
+opencv-python==4.8.1.78
+numpy==1.24.3
+scipy==1.11.4
+scikit-learn==1.3.2
+mediapipe==0.10.1
+tensorflow==2.14.0
+
+# Data Processing
+pandas==2.1.3
+plotly==5.18.0
+
+# Testing
+pytest==7.4.3
+pytest-cov==4.1.0
+pytest-asyncio==0.21.1
+httpx==0.25.2
+
+# Code Quality
+black==23.12.0
+pylint==3.0.3
+mypy==1.7.1
+flake8==6.1.0
+
+# Monitoring & Logging
+python-json-logger==2.0.7
+prometheus-client==0.19.0
+
+# Caching & Task Queue
+redis==5.0.1
+celery==5.3.4
+
+# File Storage
+python-multipart==0.0.6
+boto3==1.34.1
+
+# Email
+python-multipart==0.0.6
+
+# Utilities
+requests==2.31.0
+pytz==2023.3
+python-slugify==8.0.1
+
+# Production Server
+gunicorn==21.2.0
+
+# Optional: API Documentation Enhancement
+swagger-ui-bundle==3.52.5
+
+# For async support
+aiofiles==23.2.1
+aioredis==2.0.1
